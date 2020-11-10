@@ -1,10 +1,14 @@
 #Import relevant modules
 import cv2
+import numpy as np
 
 #Read in the image file
+thres = 0.45 #Threshold to detect object
+nms_threshold = 0.5 #NMS
 cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
-cap.set(3,640)
-cap.set(4,480)
+cap.set(3,1280)
+cap.set(4,720)
+cap.set(10,150)
 
 
 
@@ -29,14 +33,27 @@ net.setInputSwapRB(True)
 
 while True:
     success, image = cap.read()
-    classIds, confs, bbox = net.detect(image, confThreshold = 0.5)
+    classIds, confs, bbox = net.detect(image,thres)
+    bbox = list(bbox) #NMS function required bbox as a list, not a tuple
+    confs = list(np.array(confs.reshape(1,-1)[0])) #[0] removed extra bracket, and reshape used to get the values on the same row
+    confs = list(map(float,confs))
     print(classIds, confs,bbox)
 
-    if len(classIds) != 0:
-        for classId, confidence, box in zip(classIds.flatten(),confs.flatten(),bbox):
-            cv2.rectangle(image,box,color=(0,255,0), thickness=2)
-            cv2.putText(image,classNames[classId-1],(box[0]+10,box[1]+30),
+    indicies = cv2.dnn.NMSBoxes(bbox,confs,thres,nms_threshold)
+    for i in indicies:
+        i = i[0] #Get the bounding box info
+        box = bbox[i]
+        x,y,w,h = box[0],box[1],box[2],box[3]
+        cv2.rectangle(image,(x,y),(x+w),h+y),color = (0,255,0), thickness =2)
+        cv2.putText(image,classNames[classId[i][0]-1],(box[0]+10,box[1]+30),
                         cv2.FONT_HERSHEY_COMPLEX,1,(0,255,0),2)
+ 
+    #Without NMS
+    #if len(classIds) != 0:
+        #for classId, confidence, box in zip(classIds.flatten(),confs.flatten(),bbox):
+            #cv2.rectangle(image,box,color=(0,255,0), thickness=2)
+            #cv2.putText(image,classNames[classId-1],(box[0]+10,box[1]+30),
+                        #cv2.FONT_HERSHEY_COMPLEX,1,(0,255,0),2)
 
     #Open Video
     cv2.imshow("Output", image)

@@ -1,6 +1,6 @@
 # Object-Detection using OpenCV
 
-## Credit to Murtazahassan for his tutorial on Object 
+## Credit to Murtazahassan for his tutorial on Object Detection 
 - https://www.murtazahassan.com/courses/opencv-projects/lesson/code-and-files/.
 - https://www.youtube.com/watch?v=HXDD7-EnGBY
 

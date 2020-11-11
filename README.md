@@ -20,7 +20,7 @@ git clone https://github.com/VirajVaitha123/Object-Detection-
 <br>
 <u> Step 2: Create the virtual environment
 - run the following command relative to your directory to create the environment with the relevant dependencies <br>
-conda env create -f environment.yml 
+conda env create -f DataScience.yml 
 <br>
 <br>
 <u> Step 3: Run the main_webcam.py file

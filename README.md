@@ -1,23 +1,20 @@
-# Object-Detection-
-Example code to detect objects via images and your webcam
-I learnt about object detection for an internal project at work, however this example is based on this tutorial. 
-https://www.murtazahassan.com/courses/opencv-projects/lesson/code-and-files/. 
+# Object-Detection using OpenCV
 
-You can view the full tutorial here:
-https://www.youtube.com/watch?v=HXDD7-EnGBY
+## Credit to Murtazahassan for his tutorial on Object 
+- https://www.murtazahassan.com/courses/opencv-projects/lesson/code-and-files/.
+- https://www.youtube.com/watch?v=HXDD7-EnGBY
 
-I have broken down the required steps below:
 
-Step 1: Download required files
-coco.names - The model has been pretrained to detect certain objects. The .names file contains all the names of detectable objects. This is the file that will enable your model to provide the relevant name of the object instead of an an object ID such as "object" 1.
+## Getting Started
+<u> Step 1: Download required files </u>
+- coco.names - The model has been pretrained to detect certain objects. The .names file contains the names of all detectable objects. Your model will detect an integer and then find the relevant object from the coco.names files
 
-frozen_inference_graph.pb - Weights file. The model was trained on a large dataset. During this process, weights for the machine learning model have been tuned and stored within this file. If you wanted to detect new objects, there weights would be changed when you retrain the model. This is generally a large file and you shouldn't be able to read anything when you open it.
+- frozen_inference_graph.pb - Weights file. The model was trained on a large dataset. During this process, weights for the machine learning model have been tuned and stored within this file. If you wanted to detect new objects, there weights would be changed when you retrain the model. This is generally a large file and you shouldn't be able to read anything when you open it.
 
-All the relevant files can be downloaded from here:
-https://www.murtazahassan.com/courses/opencv-projects/lesson/code-and-files/. 
+<u> Step 2: Create the virtual environment
+- run the following command relative to your directory to create the environment with the relevant dependencies <br>
+conda env create -f environment.yml 
 
-The only module/package required in your virtual environment is opencv.
-
-Create a virtual environment and install the required libary by running the following command in the anaconda cmd.
-pip install opencv-python
+<u> Step 3: Run the main_webcam.py file
+python main_webcam.py
 

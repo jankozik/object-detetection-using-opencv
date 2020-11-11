@@ -5,11 +5,11 @@ import numpy as np
 #Read in the image file
 thres = 0.45 #Threshold to detect object
 nms_threshold = 0.5 #NMS
-cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+cap = cv2.VideoCapture(0)
+
 cap.set(3,1280)
 cap.set(4,720)
 cap.set(10,150)
-
 
 
 #Import the class names
@@ -44,9 +44,12 @@ while True:
         i = i[0] #Get the bounding box info
         box = bbox[i]
         x,y,w,h = box[0],box[1],box[2],box[3]
-        cv2.rectangle(image,(x,y),(x+w),h+y),color = (0,255,0), thickness =2)
-        cv2.putText(image,classNames[classId[i][0]-1],(box[0]+10,box[1]+30),
+        cv2.rectangle(image,(x,y),(x+w,h+y),color = (0,255,0), thickness =2)
+        cv2.putText(image,classNames[classIds[i][0]-1],(box[0]+10,box[1]+30),
                         cv2.FONT_HERSHEY_COMPLEX,1,(0,255,0),2)
+
+    cv2.imshow("Output", image)
+    cv2.waitKey(1)
  
     #Without NMS
     #if len(classIds) != 0:
@@ -55,6 +58,5 @@ while True:
             #cv2.putText(image,classNames[classId-1],(box[0]+10,box[1]+30),
                         #cv2.FONT_HERSHEY_COMPLEX,1,(0,255,0),2)
 
-    #Open Video
-    cv2.imshow("Output", image)
-    cv2.waitKey(1)
+
+    

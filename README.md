@@ -20,7 +20,7 @@ git clone https://github.com/VirajVaitha123/Object-Detection-
 - run the following command relative to your directory to create the environment with the relevant dependencies <br>
 conda env create -f environment.yml 
 <br>
-  
+<br>
 <u> Step 3: Run the main_webcam.py file
 python main_webcam.py
 

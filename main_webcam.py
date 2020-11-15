@@ -33,9 +33,9 @@ net.setInputSwapRB(True)
 
 while True:
     success, image = cap.read()
-    classIds, confs, bbox = net.detect(image,thres)
+    classIds, confs, bbox = net.detect(image,confThreshold = thres)
     bbox = list(bbox) #NMS function required bbox as a list, not a tuple
-    confs = list(np.array(confs.reshape(1,-1)[0])) #[0] removed extra bracket, and reshape used to get the values on the same row
+    confs = list(np.array(confs).reshape(1,-1)[0]) #[0] removed extra bracket, and reshape used to get the values on the same row
     confs = list(map(float,confs))
     print(classIds, confs,bbox)
 

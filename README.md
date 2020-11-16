@@ -21,11 +21,11 @@ Example detections <br>
 
 - ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt The mobilenet-ssd model is a Single-Shot multibox Detection (SSD) network intended to perform object detection. This file is a config file that contains the relevant parameters for opencv to run the model
 <br>
-<u> Step 2: Create the virtual environment
+<u> Step 2: Create the virtual environment <br>
 - run the following command relative to your directory to create the environment with the relevant dependencies <br>
 conda env create -f DataScience.yml 
 <br>
 <br>
-<u> Step 3: Run the main_webcam.py file
+<u> Step 3: Run the main_webcam.py file <br>
 python main_webcam.py
 

@@ -10,6 +10,8 @@ Example detections <br>
 <br>
 <br>
 <br>
+### Prerequisites 
+Anaconda
 
 ## Getting Started
 <u> Step 1: Download required files </u> <br>
@@ -26,7 +28,9 @@ Example detections <br>
 <br>
 <u> Step 2: Create the virtual environment <br>
 - run the following command relative to your directory to create the environment with the relevant dependencies <br>
+```
 conda env create -f DataScience.yml 
+```
 <br>
 <br>
 <u> Step 3: Run the main_webcam.py file <br>

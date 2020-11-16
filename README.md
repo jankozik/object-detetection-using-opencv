@@ -30,5 +30,8 @@ conda env create -f DataScience.yml
 <br>
 <br>
 <u> Step 3: Run the main_webcam.py file <br>
+
+```
 python main_webcam.py
+```
 

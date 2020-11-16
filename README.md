@@ -13,7 +13,10 @@ Example detections <br>
 
 ## Getting Started
 <u> Step 1: Download required files </u> <br>
-`<addr>` git clone https://github.com/VirajVaitha123/Object-Detection-
+
+```
+ git clone https://github.com/VirajVaitha123/Object-Detection- 
+```
 
 - coco.names - The model has been pretrained to detect certain objects. The .names file contains the names of all detectable objects. Your model will detect an integer and then find the relevant object from the coco.names files
 

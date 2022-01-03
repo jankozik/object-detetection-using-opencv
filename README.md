@@ -11,8 +11,8 @@ Example detections <br>
 <br>
 <br>
 
-### Prerequisites 
-Anaconda
+## Prerequisites 
+Anaconda Terminal
 
 ## Getting Started
 <u> Step 1: Download required files </u> <br>

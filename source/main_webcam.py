@@ -37,14 +37,22 @@ net.setInputMean((127.5,127.5,127.5))
 net.setInputSwapRB(True)
 
 while True:
+    # Start Webcam
     success, image = cap.read()
+
+    # Tuple unpacking net.detect provides ID of object, confidence and bounding box
     classIds, confs, bbox = net.detect(image,confThreshold = thres)
+
+    # It's not in a nice format to print, so it needs to be cleaned up
     bbox = list(bbox) #NMS function required bbox as a list, not a tuple
     confs = list(np.array(confs).reshape(1,-1)[0]) #[0] removed extra bracket, and reshape used to get the values on the same row
     confs = list(map(float,confs))
     print(classIds, confs,bbox)
 
+    # Extract co-ordinates of bounding box (with NMS)
     indicies = cv2.dnn.NMSBoxes(bbox,confs,thres,nms_threshold)
+
+    # add boxes for each detection on each frame
     for i in indicies:
         i = i[0] #Get the bounding box info
         box = bbox[i]
@@ -53,6 +61,7 @@ while True:
         cv2.putText(image,classNames[classIds[i][0]-1],(box[0]+10,box[1]+30),
                         cv2.FONT_HERSHEY_COMPLEX,1,(0,255,0),2)
 
+    # Show output until CTRL+C
     cv2.imshow("Output", image)
     cv2.waitKey(1)
  

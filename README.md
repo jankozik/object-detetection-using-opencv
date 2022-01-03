@@ -35,9 +35,10 @@ conda env create -f objectdetectioncv.yml
 ```
 <br>
 <br>
-<u> Step 3: Run the main_webcam.py file <br>
+<u> Step 3: Navigate to the source folder and run the main_webcam.py file <br>
 
 ```
+cd <your-local-filepath>\object-detetection-using-opencv\source
 python main_webcam.py
 ```
 

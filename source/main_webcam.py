@@ -1,6 +1,7 @@
 #Import relevant modules
 import cv2
 import numpy as np
+import os
 
 #Read in the image file
 thres = 0.45 #Threshold to detect object
@@ -14,17 +15,21 @@ cap.set(10,150)
 
 #Import the class names
 classNames = []
-classFile = '..config_files/coco.names'
+classFile = os.path.realpath(os.path.join(os.path.dirname(__file__), '..', 'config_files', 'coco.names'))
 
+
+# Read object classes
 with open(classFile, 'rt') as f:
     classNames = f.read().rstrip('\n').split('\n')
 
 #Import the config and weights file
-configPath = '..config_files/ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt' #Important parameters for the model
-weightsPath = '..config_files/frozen_inference_graph.pb'                   #Weights derived from training on large objects dataset
+os.path.realpath(os.path.join(os.path.dirname(__file__), '..', 'config_files', 'coco.names'))
+configPath =  os.path.realpath(os.path.join(os.path.dirname(__file__), '..', 'config_files', 'ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt'))
+weightsPath = os.path.realpath(os.path.join(os.path.dirname(__file__), '..', 'config_files', 'frozen_inference_graph.pb')) #Weights derived from training on large objects dataset
 
 #Set relevant parameters
 net = cv2.dnn_DetectionModel(weightsPath,configPath)
+
 #These are some suggested settings from the tutorial, others are fine but this can be used as a baseline
 net.setInputSize(320,320)
 net.setInputScale(1.0/127.5)

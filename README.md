@@ -27,11 +27,11 @@ Anaconda
 
 - ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt The mobilenet-ssd model is a Single-Shot multibox Detection (SSD) network intended to perform object detection. This file is a config file that contains the relevant parameters for opencv to run the model
 <br>
-<u> Step 2: Create the virtual environment <br>
+<u> Step 2: Open Anaconda terminal and create the conda (virtual) environment <br>
 - run the following command relative to your directory to create the environment with the relevant dependencies <br>
 
 ```
-conda env create -f DataScience.yml 
+conda env create -f objectdetectioncv.yml 
 ```
 <br>
 <br>

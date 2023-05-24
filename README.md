@@ -2,7 +2,7 @@
 OpenCV contains methods that can accept object detection weight/config files for a range of different object detection models. OpenCV can output confidence threshold and bounding box coordinates. This is extremely useful as OpenCV has methods that can accept bounding box coordinates to quickly plot boxes around the detected objects and label detected objects with a minimum amount of simple, clean code. OpenCV also has a method to apply Non-maximum Suppression (NMS), a technique used to prevent multiple detections of the same object by only keeping the detection with the highest confidence for that particular object. 
 
 Example detections <br>
-![Test]([https://github.com/Jankozik/Object-Detection-/blob/master/Images/SampleDetection.PNG](https://github.com/jankozik/object-detetection-using-opencv/blob/main/Images/SampleDetection.PNG))
+![Test](https://github.com/jankozik/object-detetection-using-opencv/blob/main/Images/SampleDetection.PNG)
 
 ## Prerequisites 
 Anaconda Terminal

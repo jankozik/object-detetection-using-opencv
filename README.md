@@ -2,7 +2,7 @@
 OpenCV contains methods that can accept object detection weight/config files for a range of different object detection models. OpenCV can output confidence threshold and bounding box coordinates. This is extremely useful as OpenCV has methods that can accept bounding box coordinates to quickly plot boxes around the detected objects and label detected objects with a minimum amount of simple, clean code. OpenCV also has a method to apply Non-maximum Suppression (NMS), a technique used to prevent multiple detections of the same object by only keeping the detection with the highest confidence for that particular object. 
 
 Example detections <br>
-![Test](https://github.com/VirajVaitha123/Object-Detection-/blob/master/Images/SampleDetection.PNG)
+![Test](https://github.com/Jankozik/Object-Detection-/blob/master/Images/SampleDetection.PNG)
 
 ## Credit to Murtazahassan for his tutorial on Object Detection 
 - https://www.murtazahassan.com/courses/opencv-projects/lesson/code-and-files/.
@@ -18,7 +18,7 @@ Anaconda Terminal
 <u> Step 1: Download required files </u> <br>
 
 ```
- git clone https://github.com/VirajVaitha123/object-detetection-using-opencv.git
+ git clone https://github.com/Jankozik/object-detetection-using-opencv.git
 ```
 
 - coco.names - The model has been pretrained to detect certain objects. The .names file contains the names of all detectable objects. Your model will detect an integer and then find the relevant object from the coco.names files

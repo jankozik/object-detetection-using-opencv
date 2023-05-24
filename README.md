@@ -4,13 +4,6 @@ OpenCV contains methods that can accept object detection weight/config files for
 Example detections <br>
 ![Test](https://github.com/Jankozik/Object-Detection-/blob/master/Images/SampleDetection.PNG)
 
-## Credit to Murtazahassan for his tutorial on Object Detection 
-- https://www.murtazahassan.com/courses/opencv-projects/lesson/code-and-files/.
-- https://www.youtube.com/watch?v=HXDD7-EnGBY
-<br>
-<br>
-<br>
-
 ## Prerequisites 
 Anaconda Terminal
 
